@@ -1,0 +1,43 @@
+.coinlist-container {
+  width: 75%;
+  margin: 0 auto;
+  .coinlist {
+    padding: 50px 0;
+    .coin {
+      margin-bottom: 2em;
+      border-bottom: 1px solid white;
+      width: 100%;
+      //   display: flex;
+      //   justify-content: space-between;
+      //   align-items: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      align-items: center;
+      padding-bottom: 1em;
+      text-align: center;
+      //   justify-content: flex-end;
+
+      .coin-logo {
+        width: 40px;
+      }
+      .coin-name {
+        color: #fff;
+      }
+      .coin-symbol {
+        color: #fff;
+      }
+      .coin-price {
+        color: #fff;
+      }
+      .coin-percent {
+        color: #fff;
+      }
+      .coin-positive {
+        color: green;
+      }
+      .coin-negative {
+        color: red;
+      }
+    }
+  }
+}
