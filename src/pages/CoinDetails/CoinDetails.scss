@@ -2,7 +2,24 @@
   width: 60%;
   margin: 0 auto;
   padding: 50px;
-  .coin-name {
-    font-size: 28px;
+  .coin-head {
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    .info-container {
+      display: flex;
+      align-items: center;
+
+      width: 40%;
+      .coin-name {
+        font-size: 28px;
+        margin-right: 0.5em;
+      }
+      .coin-logo {
+        width: 60px;
+        height: 60px;
+        margin-right: 0.5em;
+      }
+    }
   }
 }
