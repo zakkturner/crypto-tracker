@@ -1,24 +1,27 @@
 import React, { useState } from "react";
 import "./SearchBar.scss";
 
-export default function SearchBar() {
+export default function SearchBar({ getQuery }) {
   const [text, setText] = useState("");
 
-  // const onChange = () => {
-  //   console.log("y");
-  // };
+  const onChange = (q) => {
+    setText(q);
+    getQuery(q);
+  };
   return (
     <div className="search-container">
-      <input
-        className="app-search"
-        type="text"
-        name="search"
-        placeholder="Search a coin"
-        // onChange={() => {
-        //   onChange();
-        // }}
-        // autoFocus
-      />
+      <form>
+        <input
+          className="app-search"
+          type="text"
+          name="search"
+          placeholder="Search a coin"
+          onChange={(e) => {
+            onChange(e.target.value);
+          }}
+          autoFocus
+        />
+      </form>
     </div>
   );
 }
