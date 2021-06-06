@@ -1,8 +1,9 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
+import axios from "axios";
 
-const CoinContext = createContext();
+export const CoinContext = createContext();
 
-export const CoinProvider = () => {
+export const CoinProvider = (props) => {
   const [coins, setCoins] = useState({ hits: [] });
   useEffect(() => {
     const fetchData = async () => {
@@ -12,5 +13,9 @@ export const CoinProvider = () => {
     fetchData();
     console.log(coins.hits);
   }, []);
-  return <div></div>;
+  return (
+    <CoinContext.Provider value={[coins, setCoins]}>
+      {props.children}
+    </CoinContext.Provider>
+  );
 };

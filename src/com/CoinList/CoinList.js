@@ -1,18 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import "./CoinList.scss";
 import { Router, Link } from "react-router-dom";
+import { CoinContext } from "../../CoinContext";
 
 export default function CoinList() {
-  const [coins, setCoins] = useState({ hits: [] });
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios.get("https://data.messari.io/api/v1/assets");
-      setCoins({ hits: result.data });
-    };
-    fetchData();
-    console.log(coins.hits);
-  }, []);
+  const [coins, setCoins] = useContext(CoinContext);
+
   return (
     // <Router>
     <div className="coinlist-container">
