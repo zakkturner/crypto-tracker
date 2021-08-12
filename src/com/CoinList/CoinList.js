@@ -30,15 +30,20 @@ export default function CoinList() {
               </h3>
               <h3
                 className={
-                  coin.metrics.market_data.percent_change_usd_last_1_hour < 0
+                  coin.metrics.market_data.percent_change_usd_last_1_hour ==
+                  null
+                    ? ""
+                    : coin.metrics.market_data.percent_change_usd_last_1_hour <
+                      0
                     ? "coin-negative"
                     : "coin-positive"
                 }
               >
-                {coin.metrics.market_data.percent_change_usd_last_1_hour.toFixed(
-                  2
-                )}
-                %
+                {coin.metrics.market_data.percent_change_usd_last_1_hour == null
+                  ? ""
+                  : coin.metrics.market_data.percent_change_usd_last_1_hour.toFixed(
+                      2
+                    ) + "%"}
               </h3>
             </li>
           ))

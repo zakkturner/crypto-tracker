@@ -13,7 +13,7 @@ function App() {
     <CoinProvider query={query}>
       <div className="App">
         <header className="app-header">
-          <h1 className="app-title">Eloheem's Crypto Tracker</h1>
+          <h1 className="app-title">Crypto Tracker</h1>
         </header>
         <SearchBar getQuery={(q) => setQuery(q)} />
         <Router>
