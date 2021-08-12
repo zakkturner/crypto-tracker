@@ -8,9 +8,7 @@ export const CoinProvider = ({ children, query }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await axios.get(
-          `https://data.messari.io/api/v1/assets/` + query
-        );
+        const result = await axios.get(`https://data.messari.io/api/v2/assets`);
         setCoins({ hits: result.data });
       } catch (err) {
         console.log(err);
